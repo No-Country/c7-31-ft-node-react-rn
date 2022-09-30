@@ -1,7 +1,12 @@
 import "./App.css";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
-  return <div className="bg-rose-700">WELCOME TO WEB</div>;
+  return (
+    <Routes>
+      <Route path="/" element={"hola mundo"} />
+    </Routes>
+  );
 }
 
 export default App;
