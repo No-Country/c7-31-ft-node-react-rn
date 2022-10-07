@@ -2,7 +2,6 @@
 
 | Developer               | Rol      | LinkedIn                                             | GitHub - Figma                      |
 | ----------------------- | -------- | ---------------------------------------------------- | ----------------------------------- |
-| nombre                  | rol      | linkedin                                             | github                              |
 | Mario Martinez          | Back-End | https://www.linkedin.com/in/mario-mtz/               | https://github.com/soymariomtz      |
 | Juan Elias Jabib        | Back-End | linkedin                                             | https://github.com/JuanEliasJabib02 |
 | Manuel Kloster          | Backend  | https://www.linkedin.com/in/manuel-kloster           | https://github.com/Nekrocow/        |

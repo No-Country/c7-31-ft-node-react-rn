@@ -54,29 +54,10 @@ export default {
 	filter: require("../assets/SearchBar/Filter.png"),
 	search: require("../assets/SearchBar/Search.png"),
 
-	// ICONS SERVICES
-	bathdroom_dark: require("../assets/Services/Bathdroom_dark.png"),
-	bathdroom_light: require("../assets/Services/Bathdroom_light.png"),
-	drinks_dark: require("../assets/Services/Drinks_dark.png"),
-	drinks_light: require("../assets/Services/Drinks_light.png"),
-	food_dark: require("../assets/Services/Food_dark.png"),
-	food_light: require("../assets/Services/Food_light.png"),
-	hotwater_dark: require("../assets/Services/Hotwater_dark.png"),
-	hotwater_light: require("../assets/Services/Hotwater_light.png"),
-	market_dark: require("../assets/Services/Market_dark.png"),
-	market_light: require("../assets/Services/Market_light.png"),
-	parking_dark: require("../assets/Services/Parking_dark.png"),
-	parking_light: require("../assets/Services/Parking_light.png"),
-	shower_dark: require("../assets/Services/Shower_dark.png"),
-	shower_light: require("../assets/Services/Shower_light.png"),
-	wifi_dark: require("../assets/Services/Wifi_dark.png"),
-	wifi_light: require("../assets/Services/Wifi_light.png"),
-
 	//LOGO
 	logo_dark: require("../assets/Logo/Logo_dark.png"),
 	logo_light: require("../assets/Logo/Logo_light.png"),
 	logo_version_white: require("../assets/Logo/logo_version_white.png"),
-	principal_logo_light: require("../assets/Logo/principal_logo_light.png"),
 
 	//FILTER SEARCHBAR
 	filter_icono: require("../assets/SearchBar/Filtros.png"),
@@ -93,7 +74,18 @@ export default {
 	karting_icono: require("../assets/Categories/Karting.png"),
 	kickboxing_icono: require("../assets/Categories/Kickboxing.png"),
 	pubs_icono: require("../assets/Categories/Pubs.png"),
+	basketball_icono: require("../assets/Categories/Basquetball.png"),
+	Beach_icono: require("../assets/Categories/Beach.png"),
+	Billard_icono: require("../assets/Categories/Billard.png"),
+	Climbing_icono: require("../assets/Categories/Climbing.png"),
+	Gym_icono: require("../assets/Categories/Gym.png"),
+	Parks_icono: require("../assets/Categories/Parks.png"),
+	Skateboard_icono: require("../assets/Categories/Skateboard.png"),
+	Soccer_icono: require("../assets/Categories/Soccer.png"),
+	Trekking_icono: require("../assets/Categories/Trekking.png"),
+	Volleyball_icono: require("../assets/Categories/Volleyball.png"),
 	ping_pong_icono: require("../assets/Categories/Ping_pong.png"),
+
 	// ICONS SERVICES
 	bathdroom_dark: require("../assets/Services/Bathdroom_dark.png"),
 	bathdroom_light: require("../assets/Services/Bathdroom_light.png"),
@@ -126,21 +118,28 @@ export default {
 	//ICON ARROWS
 	arrow_back: require("../assets/Icons/Arrow_back.png"),
 	arrow_back_filled: require("../assets/Icons/Arrow_filled.png"),
+
+	//WELCOME PICS
+	principal_logo_dark: require("../assets/Welcome/principal_logo_dark.png"),
+	principal_logo_light: require("../assets/Welcome/principal_logo_light.png"),
+	welcome1_dark: require("../assets/Welcome/welcome1_dark.png"),
+	welcome1_light: require("../assets/Welcome/welcome1_light.png"),
+	welcome2_dark: require("../assets/Welcome/welcome2_dark.png"),
+	welcome2_light: require("../assets/Welcome/welcome2_light.png"),
+	welcome3_dark: require("../assets/Welcome/welcome3_dark.png"),
+	welcome3_light: require("../assets/Welcome/welcome3_light.png"),
+	welcome4_dark: require("../assets/Welcome/welcome4_dark.png"),
+	welcome4_light: require("../assets/Welcome/welcome4_light.png"),
+
+	// SOCIALS
+	apple: require("../assets/Socials/apple.png"),
+	google: require("../assets/Socials/g.png"),
+	fb: require("../assets/Socials/fb.png"),
+
+	//dummys
 	dummy1: require("../assets/Dummy/dummy1.png"),
 	dummy2: require("../assets/Dummy/dummy2.png"),
 	dummy3: require("../assets/Dummy/dummy3.png"),
 	dummy4: require("../assets/Dummy/dummy4.png"),
 	dummy5: require("../assets/Dummy/dummy5.png"),
-
-	// LOGIN
-	login1: require("../assets/Login/login1.png"),
-	login2: require("../assets/Login/login2.png"),
-	login3: require("../assets/Login/login3.png"),
-	login4: require("../assets/Login/login4.png"),
-
-	//SOCIALS
-	apple: require("../assets/Socials/apple.png"),
-	fb: require("../assets/Socials/fb.png"),
-	google: require("../assets/Socials/g.png"),
-	mail: require("../assets/Socials/mail.png"),
 };

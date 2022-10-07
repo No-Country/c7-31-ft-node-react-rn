@@ -1,18 +1,27 @@
-import { useNavigation } from "@react-navigation/native";
-
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Text, TextInput, TouchableOpacity, View } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
-import { registerScreenStyles } from "./RegisterScreenStyles";
+import {
+	ButtonChangeTheme,
+	RedButtonsLogin,
+} from "../../../components/Buttons/Buttons";
+import { Calendar } from "../../../components/Calendar/Calendar";
+import { RegisterScreenStyles } from "./RegisterScreenStyles";
 
 export const RegisterScreen = () => {
-	const navigation = useNavigation();
-
+	const registerScreenStyles = RegisterScreenStyles();
 	const [name, setName] = useState("");
 	const [lastName, setLastName] = useState("");
-	const [birthDate, setBirthDate] = useState("");
+	const [birthDate, setBirthDate] = useState("Fecha de nacimiento");
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
+	const [genre, setGenre] = useState("");
+	const [showCalendar, setShowCalendar] = useState(false);
+
+	const handleSelectedGenre = (value) => {
+		setGenre(value);
+	};
+
 	return (
 		<ScrollView style={registerScreenStyles.containerBig}>
 			<View style={registerScreenStyles.containerRegisterScreen}>
@@ -28,12 +37,21 @@ export const RegisterScreen = () => {
 					value={lastName}
 					placeholder='Apellido'
 				/>
-				<TextInput
+				<TouchableOpacity
 					style={registerScreenStyles.inputUserInfo}
-					onChangeText={(e) => setBirthDate(e)}
-					value={birthDate}
-					placeholder='Fecha de nacimiento (dd/mm/aa)'
-				/>
+					onPress={() => setShowCalendar(true)}>
+					<Text style={registerScreenStyles.textInputUserInfo}>
+						{birthDate === "Fecha de nacimiento"
+							? birthDate
+							: new Date(birthDate).toLocaleDateString("en-GB")}
+					</Text>
+				</TouchableOpacity>
+				{showCalendar && (
+					<Calendar
+						setBirthDate={setBirthDate}
+						setShowCalendar={setShowCalendar}
+					/>
+				)}
 				<Text style={registerScreenStyles.textRegisterScreen}>
 					Debe ser mayor de 18 años para registrarse, su información
 					no sera compartida a otras personas.
@@ -49,23 +67,55 @@ export const RegisterScreen = () => {
 					onChangeText={(e) => setPassword(e)}
 					value={password}
 					placeholder='Contaseña'
+					keyboardType='number-pad'
+					secureTextEntry={true}
 				/>
 				<View style={registerScreenStyles.containerButtonSelection}>
 					<TouchableOpacity
-						style={registerScreenStyles.buttonSelection}>
-						<Text style={registerScreenStyles.textButtonSelection}>
+						style={
+							genre === "female"
+								? registerScreenStyles.buttonSelected
+								: registerScreenStyles.buttonSelection
+						}
+						onPress={() => handleSelectedGenre("female")}>
+						<Text
+							style={
+								genre === "female"
+									? registerScreenStyles.textButtonSelected
+									: registerScreenStyles.textButtonSelection
+							}>
 							Mujer
 						</Text>
 					</TouchableOpacity>
 					<TouchableOpacity
-						style={registerScreenStyles.buttonSelection}>
-						<Text style={registerScreenStyles.textButtonSelection}>
+						style={
+							genre === "male"
+								? registerScreenStyles.buttonSelected
+								: registerScreenStyles.buttonSelection
+						}
+						onPress={() => handleSelectedGenre("male")}>
+						<Text
+							style={
+								genre === "male"
+									? registerScreenStyles.textButtonSelected
+									: registerScreenStyles.textButtonSelection
+							}>
 							Hombre
 						</Text>
 					</TouchableOpacity>
 					<TouchableOpacity
-						style={registerScreenStyles.buttonSelection}>
-						<Text style={registerScreenStyles.textButtonSelection}>
+						style={
+							genre === "other"
+								? registerScreenStyles.buttonSelected
+								: registerScreenStyles.buttonSelection
+						}
+						onPress={() => handleSelectedGenre("other")}>
+						<Text
+							style={
+								genre === "other"
+									? registerScreenStyles.textButtonSelected
+									: registerScreenStyles.textButtonSelection
+							}>
 							Otro
 						</Text>
 					</TouchableOpacity>
@@ -75,15 +125,9 @@ export const RegisterScreen = () => {
 					Términos de Servicio, Pagos y toma en conocimiento nuestra
 					Política de Privacidad.
 				</Text>
-				<TouchableOpacity
-					key={`register`}
-					style={registerScreenStyles.buttonAccept}
-					onPress={() => navigation.navigate("HomeScreen")}>
-					<Text style={registerScreenStyles.textButtonAccept}>
-						Acepto
-					</Text>
-				</TouchableOpacity>
+				<RedButtonsLogin buttonText={"Acepto"} path={"HomeScreen"} />
 			</View>
+			<ButtonChangeTheme />
 		</ScrollView>
 	);
 };

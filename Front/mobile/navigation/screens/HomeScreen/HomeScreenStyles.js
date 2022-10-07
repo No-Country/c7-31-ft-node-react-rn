@@ -1,4 +1,6 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, Dimensions } from "react-native";
+const widthScreen = Dimensions.get("window").width;
+const heightImage = widthScreen;
 
 export const homeStyles = StyleSheet.create({
     container: {
@@ -30,7 +32,7 @@ export const homeStyles = StyleSheet.create({
         marginBottom: 10,
         padding: 10,
         height: 355,
-        width: 450,
+        width: widthScreen,
         borderBottomLeftRadius: 10,
         borderBottomRightRadius: 10,
         borderTopRightRadius: 10,
@@ -75,26 +77,46 @@ export const homeStyles = StyleSheet.create({
     corazon_en_card: {
         width: 37,
         height: 37,
-        marginLeft: 307,
         marginTop: 15,
         position: "absolute",
         justifyContent: "flex-end",
-        zIndex:1
-
+        zIndex: 10,
+        alignSelf: "flex-end",
     },
     star_red: {
         width: 15,
         height: 15,
-        marginLeft:100
+        marginLeft: 100,
     },
     cards: {
         boxShadow: "none",
     },
     nombre_cancha: {
-        flexDirection:"row"
+        flexDirection: "row",
     },
     titulo_descripcion_cancha: {
-        fontWeight:"600",
-        fontSize:16,
-    }
+        fontWeight: "600",
+        fontSize: 16,
+    },
+    boton_ver_mas_categorias: {
+        color: "red",
+        display: "flex",
+        //alignItems:"flex-end",
+        alignSelf: "flex-end",
+        fontSize: 12,
+        marginRight: 15,
+        marginTop: 10,
+        //justifyContent:"flex-end",
+        //marginLeft:250,
+    },
+    lista_flex_iconos: {
+        display: "flex",
+        flexWrap: "wrap",
+        flexDirection: "row",
+        width: widthScreen,
+        height: heightImage,
+        justifyContent: "space-evenly",
+        padding:18
+
+    },
 });

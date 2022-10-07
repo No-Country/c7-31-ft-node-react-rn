@@ -1,5 +1,13 @@
-const getUsers = () => {
-    console.log('working users controller');
+const getUsers = async (req, res) => {
+    
+
+    try {
+
+        
+    } catch (e) {
+
+        
+    }
  }
 
  
