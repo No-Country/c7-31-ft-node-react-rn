@@ -1,6 +1,12 @@
-const getReviews = () => {
-    console.log('working reviews controller');
- }
+const { Reviews } = require('../../config/database')
 
- 
-module.exports = {getReviews}
+const getReviews = async (req, res, next) => {
+  try {
+    let allReviews = await Reviews.findAll({ attributes: ['name'] })
+    res.json(allReviews)
+  } catch (error) {
+    next(error)
+  }
+}
+
+module.exports = { getReviews }

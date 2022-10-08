@@ -1,12 +1,13 @@
 const { DataTypes } = require('sequelize')
+const {db} = require('../../config/database')
 
-module.exports = (sequelize) => {
-  sequelize.define('local', {
+const Locals = db.define('local', {
     id: {
-      type: DataTypes.UUID,
-      defaultValue: DataTypes.UUIDV4,
-      allowNull: false,
-      primaryKey: true
+      primaryKey: true,
+      type: DataTypes.INTEGER,
+      autoIncrement: true,
+      unique: true,
+      allowNull:false,
     },
     name: {
       type: DataTypes.STRING(40),
@@ -26,4 +27,6 @@ module.exports = (sequelize) => {
       allowNull: false
     },    
   })
-}
+
+
+module.exports = {Locals}

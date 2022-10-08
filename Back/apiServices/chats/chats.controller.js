@@ -1,6 +1,12 @@
-const getChat = () => {
-    console.log("working chat controller")
-  }
+const { Chats } = require('../../config/database')
 
-  
-module.exports  = {getChat}
+const getChats = async (req, res, next) => {
+  try {
+    let allChats = await Chats.findAll({ attributes: ['name'] })
+    res.json(allChats)
+  } catch (error) {
+    next(error)
+  }
+}
+
+module.exports = { getChats }

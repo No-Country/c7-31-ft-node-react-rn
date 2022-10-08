@@ -1,6 +1,12 @@
-const getFavsItem = () => {
-    console.log("working favs-items controller")
-  }
+const { Favs_items } = require('../../config/database')
 
-  
-module.exports  = {getFavsItem}
+const getFavsItems = async (req, res, next) => {
+  try {
+    let allFavsItem = await Favs_items.findAll({ attributes: ['name'] })
+    res.json(allFavsItem)
+  } catch (error) {
+    next(error)
+  }
+}
+
+module.exports = { getFavsItems }

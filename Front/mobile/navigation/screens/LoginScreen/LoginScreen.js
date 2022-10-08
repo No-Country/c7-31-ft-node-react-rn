@@ -6,6 +6,7 @@ import {
 	OtherLoginMethodButton,
 	RedButtonsLogin,
 } from "../../../components/Buttons/Buttons";
+import { ModalErrorCredentials } from "../../../components/Modals/Modals";
 import assets from "../../../constants/assets";
 import { LoginScreenStyles } from "./LoginScreenStyles";
 
@@ -13,6 +14,7 @@ export const LoginScreen = () => {
 	const loginScreenStyles = LoginScreenStyles();
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
+	const [showMessageError, setShowMessageError] = useState(false);
 	return (
 		<ScrollView style={loginScreenStyles.containerBig}>
 			<View style={loginScreenStyles.containerEmailScreen}>
@@ -31,7 +33,16 @@ export const LoginScreen = () => {
 					keyboardType='number-pad'
 					secureTextEntry={true}
 				/>
-				<RedButtonsLogin buttonText={"Continuar"} path={"HomeScreen"} />
+				{showMessageError && (
+					<ModalErrorCredentials
+						setShowMessageError={setShowMessageError}
+					/>
+				)}
+				<RedButtonsLogin
+					buttonText={"Continuar"}
+					path={"HomeScreen"}
+					setShowMessageError={setShowMessageError}
+				/>
 				<View style={loginScreenStyles.containerSeparator}>
 					<Text style={loginScreenStyles.lineSeparator}></Text>
 					<Text style={loginScreenStyles.circleSeparator}></Text>

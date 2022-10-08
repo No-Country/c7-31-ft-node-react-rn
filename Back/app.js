@@ -1,5 +1,6 @@
 const express = require("express");
 const cors = require("cors");
+const path = require("path");
 
 const { router } = require("./routes");
 const { json } = require("express");
@@ -14,13 +15,17 @@ app.use(cors());
 app.use(json());
 app.use(express.urlencoded({ extended: true }));
 
+//Serving static files /fixthis later
+app.use(express.static(path.join(__dirname, "public")));
+
+// Set template engine 
+app.set('view engine', 'pug');
+app.set('services', path.join(__dirname, "./services/emails','template-engine'"))
 
 
 //Index Router
 
 app.use("/api/v1", router);
-
-
 
 
 // Error endpoint not found 

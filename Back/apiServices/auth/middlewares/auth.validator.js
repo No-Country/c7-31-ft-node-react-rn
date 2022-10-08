@@ -11,6 +11,7 @@ const signUpValidator = [
     .notEmpty()
     .withMessage("lastName can not be empty"),
   body("email")
+    .isEmail()
     .notEmpty()
     .withMessage("must provide a valid email"),
   body("password")

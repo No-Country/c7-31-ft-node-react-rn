@@ -142,4 +142,7 @@ export default {
 	dummy3: require("../assets/Dummy/dummy3.png"),
 	dummy4: require("../assets/Dummy/dummy4.png"),
 	dummy5: require("../assets/Dummy/dummy5.png"),
+
+	//FEEDBACK USER
+	error_credentials_light: require("../assets/Login/error_credentials_light.png"),
 };

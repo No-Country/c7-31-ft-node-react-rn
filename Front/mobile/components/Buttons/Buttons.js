@@ -4,7 +4,7 @@ import { Image, Text, TouchableOpacity, View } from "react-native";
 import { ThemeContext } from "../../Context/Theme";
 import { ButtonsStyles } from "./ButtonsStyles";
 
-export const RedButtonsLogin = ({ buttonText, path }) => {
+export const RedButtonsLogin = ({ buttonText, path, setShowMessageError }) => {
 	const buttonsStyles = ButtonsStyles();
 	const navigation = useNavigation();
 
@@ -12,7 +12,11 @@ export const RedButtonsLogin = ({ buttonText, path }) => {
 		<TouchableOpacity
 			style={buttonsStyles.redButtonLogin}
 			key={`${buttonText}`}
-			onPress={() => navigation.navigate(path)}>
+			onPress={() =>
+				setShowMessageError
+					? setShowMessageError(true)
+					: navigation.navigate(path)
+			}>
 			<Text style={buttonsStyles.textButtonsLogin}>{buttonText}</Text>
 		</TouchableOpacity>
 	);

@@ -1,6 +1,12 @@
-const getReservation = () => {
-    console.log('working reservation controller');
- }
+const { Reservations } = require('../../config/database')
 
- 
-module.exports = {getReservation}
+const getReservations = async (req, res, next) => {
+  try {
+    let allReservations = await Reservations.findAll({ attributes: ['name'] })
+    res.json(allReservations)
+  } catch (error) {
+    next(error)
+  }
+}
+
+module.exports = { getReservations }

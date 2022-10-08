@@ -10,18 +10,19 @@ export const WelcomeScreenStyles = () => {
 		containerBig: {
 			width: width,
 			backgroundColor: backTheme,
+			paddingTop: 25,
 		},
 		containerScreen: {
 			width: width,
-			height: height - 30,
+			minHeight: 500,
 			display: "flex",
 			flexDirection: "column",
+			justifyContent: "flex-start",
 			alignItems: "center",
 		},
 		logoIcon: {
-			width: 277,
+			width: 250,
 			height: 78,
-			margin: 25,
 		},
 	});
 };

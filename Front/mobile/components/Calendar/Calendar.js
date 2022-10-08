@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 import DatePicker from "@react-native-community/datetimepicker";
 
@@ -16,7 +16,7 @@ export const Calendar = ({ setBirthDate, setShowCalendar }) => {
 			cancelBtnText='Cancel'
 			onChange={(e) => {
 				setShowCalendar(false);
-				setBirthDate(e.nativeEvent.timestamp);
+				e.type !== "dismissed" && setBirthDate(e.nativeEvent.timestamp);
 			}}
 		/>
 	);

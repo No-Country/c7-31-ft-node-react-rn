@@ -1,12 +1,15 @@
 
 
-//NPM
+//Modules
 const bycript = require("bcryptjs");
 const { handleHttpError } = require("../../utils/handleError");
 const jwt = require("jsonwebtoken");
 
 //Models
 const { Users } = require("../users/users.model");
+
+//Services
+const { Email } = require("../../services/emails/email.service");
 
 
 //controllers
@@ -41,6 +44,7 @@ const singUp = async (req, res,next) => {
     newUser.password = undefined;
 
     //Email welcome
+    new Email(email).sendWelcome(firstName);
 
     res.status(201).json({
       status: "succes",
@@ -53,9 +57,11 @@ const singUp = async (req, res,next) => {
   }
 }
 
-const login = async ( req, res,next ) => {
+const login = async (req, res) => {
+  
+  try {
 
-  const { email, password } = req.body;
+    const { email, password } = req.body;
 
   
   const user = await Users.findOne({
@@ -88,6 +94,12 @@ const login = async ( req, res,next ) => {
   res.status(200).json({
     token
   })
+    
+  } catch (err) {
+    handleHttpError(res,"ERROR_LOGIN",500)
+  }
+
+  
 
 
 }

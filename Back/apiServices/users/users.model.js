@@ -30,7 +30,7 @@ const Users = db.define('users', {
     unique:true,
   },
   hobbies: {
-    type: DataTypes.ARRAY(DataTypes.INTEGER),
+    type: DataTypes.ARRAY(DataTypes.STRING),
     allowNull: true,
   },
   avatarUrl: {

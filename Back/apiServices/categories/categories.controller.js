@@ -1,6 +1,12 @@
-const getCategories = () => {
-    console.log("working categories controller")
-  }
+const { Categories } = require('../../config/database')
 
-  
-module.exports  = {getCategories}
+const getCategories = async (req, res, next) => {
+  try {
+    let allCategories = await Categories.findAll({ attributes: ['name'] })
+    res.json(allCategories)
+  } catch (error) {
+    next(error)
+  }
+}
+
+module.exports = { getCategories }

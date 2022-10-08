@@ -1,6 +1,12 @@
-const getActivities = () => {
-    console.log("working activities controller")
-  }
+const { Activities } = require('../../config/database')
 
-  
-module.exports  = {getActivities}
+const getActivities = async (req, res, next) => {
+  try {
+    let allActivities = await Activities.findAll({ attributes: ['name'] })
+    res.json(allActivities)
+  } catch (error) {
+    next(error)
+  }
+}
+
+module.exports = { getActivities }
