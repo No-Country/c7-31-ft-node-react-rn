@@ -23,8 +23,8 @@ import { TouchableOpacity } from "react-native-gesture-handler";
 const HomeCard = () => {
     const [corazonOn, setCorazonOn] = useState(true);
     return (
-        <Card style={homeStyles.cards}>
-            <TouchableOpacity
+        <View style={homeStyles.cards}>
+         {/*    <TouchableOpacity
                 onPress={() => {
                     setCorazonOn(!corazonOn);
                 }}>
@@ -41,7 +41,7 @@ const HomeCard = () => {
                         style={homeStyles.corazon_en_card}
                     />
                 )}
-            </TouchableOpacity>
+            </TouchableOpacity> */}
 
             <Card.Image style={homeStyles.image} source={assets.dummy1} />
 
@@ -64,7 +64,7 @@ const HomeCard = () => {
                 }}>
                 10 USD hora
             </Text>
-        </Card>
+        </View>
     );
 };
 

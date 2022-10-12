@@ -18,7 +18,7 @@ export const CarouselCustom = ({
 				source={item.image}
 				resizeMode='contain'
 				PlaceholderContent={<ActivityIndicator color='blue' />}
-				style={{ width, height, backgroundColor: "black" }}
+				style={{ width, height, backgroundColor: "white" }}
 			/>
 		);
 	};

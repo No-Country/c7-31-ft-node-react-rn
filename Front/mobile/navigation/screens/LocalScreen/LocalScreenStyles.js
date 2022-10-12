@@ -1,16 +1,18 @@
 import { useContext } from "react";
-import { StyleSheet } from "react-native";
+import { StyleSheet, useWindowDimensions } from "react-native";
 import { ThemeContext } from "../../../Context/Theme";
 
 export const LocalStyles = () => {
 	const { textTheme, notTextTheme, backTheme, notBackTheme } =
 		useContext(ThemeContext);
+	const { width } = useWindowDimensions();
 
 	return StyleSheet.create({
 		containerBig: {
 			width: "100%",
 			flexDirection: "column",
 			backgroundColor: backTheme,
+			marginTop: 35,
 		},
 		containerLineSeparator: {
 			alignSelf: "center",
@@ -28,6 +30,7 @@ export const LocalStyles = () => {
 			position: "relative",
 			padding: 0,
 			margin: 0,
+			marginTop: 10,
 		},
 		containerIconsInteractive: {
 			width: "100%",
@@ -372,6 +375,7 @@ export const LocalStyles = () => {
 			color: textTheme,
 		},
 		containerReviewCard: {
+			width: 320,
 			marginTop: 30,
 			height: 184,
 			borderWidth: 1,
@@ -409,6 +413,64 @@ export const LocalStyles = () => {
 			fontSize: 16,
 			fontWeight: "400",
 			color: textTheme,
+		},
+		containerMakeReservation: {
+			height: 70,
+			backgroundColor: notBackTheme,
+			display: "flex",
+			flexDirection: "row",
+			justifyContent: "space-around",
+			alignItems: "center",
+			position: "absolute",
+			bottom: 0,
+			left: 0,
+			right: 0,
+			borderBottomColor: backTheme,
+			borderBottomWidth: 1,
+			zIndex: 10,
+		},
+		containerMakeReservationInfo: {
+			width: 180,
+			display: "flex",
+			flexDirection: "column",
+			justifyContent: "flex-start",
+			alignItems: "center",
+		},
+		makeReservationInfoPrice: {
+			width: 125,
+			color: notTextTheme,
+			fontWeight: "900",
+			fontSize: 18,
+			textAlign: "left",
+		},
+		makeReservationInfoPriceHour: {
+			textAlign: "left",
+			color: notTextTheme,
+			fontWeight: "600",
+		},
+		makeReservationInfoText: {
+			width: 125,
+			color: notTextTheme,
+			fontSize: 14,
+			textAlign: "left",
+		},
+		containerMakeReservationButton: {
+			width: 180,
+			display: "flex",
+			justifyContent: "center",
+			alignItems: "center",
+		},
+		makeReservationButton: {
+			width: 136,
+			height: 44,
+			borderRadius: 10,
+			backgroundColor: "#F6163C",
+		},
+		makeReservationButtonText: {
+			color: "white",
+			textAlign: "center",
+			lineHeight: 44,
+			fontSize: 20,
 		},
 	});
 };

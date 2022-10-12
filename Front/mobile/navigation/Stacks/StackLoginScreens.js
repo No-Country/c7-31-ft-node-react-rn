@@ -5,7 +5,7 @@ import { WelcomeScreen } from "../screens/WelcomeScreen/WelcomeScreen";
 import { BottomTabs } from "../Tabs/BottomTabs";
 const LoginStackNavigator = createNativeStackNavigator();
 
-export const StackLogin = () => {
+export const StackLoginScreens = () => {
 	return (
 		<LoginStackNavigator.Navigator initialRouteName='WelcomeScreen'>
 			<LoginStackNavigator.Screen

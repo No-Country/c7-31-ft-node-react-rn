@@ -28,7 +28,7 @@ export const RegisterScreenStyles = () => {
 			color: "#181818",
 			borderWidth: 2,
 			backgroundColor: "white",
-			marginBottom: 20,
+			marginTop: 20,
 		},
 		textInputUserInfo: {
 			lineHeight: 45,
@@ -48,6 +48,7 @@ export const RegisterScreenStyles = () => {
 			flexDirection: "row",
 			justifyContent: "center",
 			alignItems: "center",
+			marginTop: 10,
 		},
 		buttonSelection: {
 			width: 100,
@@ -79,6 +80,29 @@ export const RegisterScreenStyles = () => {
 			textAlign: "center",
 			lineHeight: 37,
 			fontWeight: "500",
+		},
+		errorMessageText: {
+			color: "#F6163C",
+			width: 300,
+			textAlign: "left",
+			paddingLeft: 10,
+			fontSize: 10,
+			marginTop: 5,
+		},
+		redButtonLogin: {
+			backgroundColor: "#F6163C",
+			width: 300,
+			height: 55,
+			alignSelf: "center",
+			borderRadius: 15,
+			marginTop: 25,
+		},
+		textButtonsLogin: {
+			fontSize: 20,
+			fontWeight: "400",
+			textAlign: "center",
+			color: "white",
+			lineHeight: 55,
 		},
 	});
 };
