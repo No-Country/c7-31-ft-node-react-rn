@@ -1,11 +1,12 @@
-const { Activities } = require('../../config/database')
+const db = require('./locals.model')
+const { handleHttpError } = require("../../utils/handleError")
 
 const getActivities = async (req, res, next) => {
   try {
-    let allActivities = await Activities.findAll({ attributes: ['name'] })
+    let allActivities = await db.Activities.findAll({ attributes: ['name'] })
     res.json(allActivities)
   } catch (error) {
-    next(error)
+    handleHttpError(res,"ERROR_GET_ACTIVITIES",404)
   }
 }
 
